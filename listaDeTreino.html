@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Lista de Treinos</title>
+    <link rel="stylesheet" href="listaDeTreino.css">
 </head>
 <body>
 
-    <input id="treino" type="text" placeholder="Procure o seu treino aqui:">
-    <button id="procurarTreino">Procurar</button>
-    <div id="procurados"></div>
+<section class="hero">
+    <h1 class="gradient-title">Encontre seu exercício</h1>
+    <p class="hero-subtitle">Pesquise exercícios e adicione à sua rotina de treinos.</p>
+</section>
 
 
+    <div class="container">
 
-<h2>Seu treino</h2>
-<div id="treino2"></div>
+        <!-- CAMPO DE BUSCA (COM OS IDs QUE O JS USA) -->
+        <div class="search-container">
+            <input type="text" id="treino" placeholder="Digite o exercício...">
+            <button id="procurarTreino">Procurar</button>
+        </div>
+
+        <!-- RESULTADOS DA BUSCA -->
+        <h2 class="gradient-text">Resultados da busca</h2>
+        <div id="procurados" class="lista"></div>
+
+        <!-- TREINOS ADICIONADOS -->
+        <h2 class="gradient-text">Seu treino</h2>
+        <div id="treino2" class="lista"></div>
+
+    </div>
 
     <script src="listaDeTreino.js"></script>
-    
 </body>
 </html>

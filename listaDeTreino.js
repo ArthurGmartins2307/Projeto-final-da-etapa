@@ -1,8 +1,8 @@
 // --- ELEMENTOS DO DOM ---
 const procurar = document.getElementById('procurarTreino');
 const treinoInput = document.getElementById('treino');
-const areaTreino = document.getElementById('treino2'); // Área de treinos adicionados
-const listaTreinos = document.getElementById('procurados'); // Área de treinos encontrados
+const areaTreino = document.getElementById('treino2');
+const listaTreinos = document.getElementById('procurados');
 
 // --- ARRAYS DE CONTROLE ---
 const treinosProcurados = [];
@@ -11,7 +11,6 @@ const treinosAdicionados = [];
 // --- FUNÇÃO PARA CRIAR E ADICIONAR CARD ---
 function adicionarTreino(nome, descricao, series, observacao, imagem, video) {
 
-  // Evita duplicados na lista de procurados
   if (treinosProcurados.includes(nome) || treinosAdicionados.includes(nome)) {
     alert(`${nome} já está na lista!`);
     return;
@@ -19,16 +18,16 @@ function adicionarTreino(nome, descricao, series, observacao, imagem, video) {
 
   treinosProcurados.push(nome);
 
-  // --- CARD ---
+  // CARD
   const card = document.createElement('div');
-  card.classList.add('treinoCard');
+  card.classList.add('card');
 
-  // --- IMAGEM ---
+  // IMAGEM
   const img = document.createElement('img');
   img.src = imagem || 'img/placeholder.jpg';
   img.alt = nome;
 
-  // --- TEXTOS ---
+  // TEXTOS
   const h3 = document.createElement('h3');
   h3.textContent = nome;
 
@@ -41,49 +40,45 @@ function adicionarTreino(nome, descricao, series, observacao, imagem, video) {
   const pObservacao = document.createElement('p');
   pObservacao.textContent = observacao;
 
-  // --- BOTÃO ASSISTIR ---
+  // CONTAINER DOS BOTÕES
+  const btnContainer = document.createElement('div');
+  btnContainer.classList.add('card-buttons');
+
+  // BOTÃO ASSISTIR
   const botaoAssistir = document.createElement('button');
-  botaoAssistir.style.backgroundImage = "url('./imagens/play.png')";
-  botaoAssistir.style.backgroundSize = "contain";
-  botaoAssistir.style.backgroundRepeat = "no-repeat";
-  botaoAssistir.style.width = "40px";
-  botaoAssistir.style.height = "40px";
-  botaoAssistir.classList.add('assistirBtn');
+  botaoAssistir.classList.add('btn-card');
+  botaoAssistir.textContent = "Vídeo";
   botaoAssistir.addEventListener('click', () => {
-    window.open(video, '_blank'); // abre o vídeo em nova aba
+      window.open(video, '_blank');
   });
 
-  // --- BOTÃO ADICIONAR ---
+  // BOTÃO ADICIONAR
   const botaoAdicionar = document.createElement('button');
-  botaoAdicionar.textContent = 'Adicionar treino';
-  botaoAdicionar.classList.add('adicionarBtn');
+  botaoAdicionar.textContent = 'Adicionar';
+  botaoAdicionar.classList.add('btn-card');
   botaoAdicionar.addEventListener('click', () => {
-      // Evita duplicados na área de treino
+
       if (treinosAdicionados.includes(nome)) {
           alert(`${nome} já está na sua lista de treino!`);
           return;
       }
 
-      // Adiciona o treino na área de treino
       areaTreino.appendChild(card);
       treinosAdicionados.push(nome);
 
-      // Remove da lista de procurados
       const index = treinosProcurados.indexOf(nome);
       if (index !== -1) treinosProcurados.splice(index, 1);
   });
 
-  // --- BOTÃO REMOVER ---
+  // BOTÃO REMOVER
   const botaoRemover = document.createElement('button');
-  botaoRemover.textContent = 'Remover treino';
-  botaoRemover.classList.add('removerBtn');
+  botaoRemover.textContent = 'Remover';
+  botaoRemover.classList.add('btn-card');
   botaoRemover.addEventListener('click', () => {
-      // Remove o card de onde ele estiver
       if (card.parentElement) {
           card.parentElement.removeChild(card);
       }
 
-      // Remove dos arrays de controle
       let index = treinosProcurados.indexOf(nome);
       if (index !== -1) treinosProcurados.splice(index, 1);
 
@@ -91,19 +86,23 @@ function adicionarTreino(nome, descricao, series, observacao, imagem, video) {
       if (index !== -1) treinosAdicionados.splice(index, 1);
   });
 
-  // --- MONTAGEM DO CARD ---
+  // MONTAGEM DOS BOTÕES
+  btnContainer.appendChild(botaoAssistir);
+  btnContainer.appendChild(botaoAdicionar);
+  btnContainer.appendChild(botaoRemover);
+
+  // MONTAGEM DO CARD
   card.appendChild(img);
   card.appendChild(h3);
   card.appendChild(pDescricao);
   card.appendChild(pSeries);
   card.appendChild(pObservacao);
-  card.appendChild(botaoAssistir);
-  card.appendChild(botaoAdicionar);
-  card.appendChild(botaoRemover);
+  card.appendChild(btnContainer);
 
-  // --- ADICIONA O CARD À LISTA DE PROCURADOS ---
+  // ADICIONA NA LISTA
   listaTreinos.appendChild(card);
 }
+
 
 
 // --- SISTEMA DE BUSCA ---
