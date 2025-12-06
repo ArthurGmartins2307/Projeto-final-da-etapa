@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Calorias</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+<header class="header">
+     <div class="container header-flex">
+        <div class="logo">
+           <img src="./img/logo.png" alt="logo" class="logo-img">
+           <span class="logo-text">KRONOS</span>
+        </div>
+
+
+        <nav id="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <a href="index.html">Início</a>
+            <a href="Academia.html">Academias</a>
+            <a href="listaDeTreino.html">Montar Treino</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Vamos calcular uma dieta</h1>
+
+    <form id="formCalorias">
+        <!-- Formulário conforme seu modelo -->
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" placeholder="Anos" required>
+
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" step="0.1" placeholder="Ex: 70.5" required>
+
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" name="altura" placeholder="Ex: 175" required>
+
+        <label for="atividade">Nível de Atividade:</label>
+        <select id="atividade" name="atividade" required>
+            <option value="">Selecione</option>
+            <option value="1.2">Sedentário</option>
+            <option value="1.375">Exercício leve</option>
+            <option value="1.55">Moderado</option>
+            <option value="1.725">Intenso</option>
+            <option value="1.9">Atleta</option>
+        </select>
+
+        <div id="atividadesExtrasContainer" class="card-atividades">
+            <h3 class="titulo-atividades">Quais atividades físicas você pratica?</h3>
+            <p class="subinfo">Selecione todas as atividades que fazem parte da sua rotina.</p>
+
+            <div id="atividadesExtras" class="lista-atividades">
+                <label><input type="checkbox" value="academia"> Academia</label>
+                <label><input type="checkbox" value="atletismo"> Atletismo</label>
+                <label><input type="checkbox" value="boxe"> Boxe</label>
+                <label><input type="checkbox" value="caminhada"> Caminhada</label>
+                <label><input type="checkbox" value="capoeira"> Capoeira</label>
+                <label><input type="checkbox" value="ciclismo"> Ciclismo</label>
+                <label><input type="checkbox" value="corrida"> Corrida</label>
+                <label><input type="checkbox" value="crossfit"> Crossfit</label>
+                <label><input type="checkbox" value="jiu jitsu"> Jiu-Jitsu</label>
+                <label><input type="checkbox" value="judo"> Judô</label>
+                <label><input type="checkbox" value="karate"> Karatê</label>
+                <label><input type="checkbox" value="kickboxing"> Kickboxing</label>
+                <label><input type="checkbox" value="krav maga"> Krav Maga</label>
+                <label><input type="checkbox" value="muay thai"> Muay Thai</label>
+                <label><input type="checkbox" value="natação"> Natação</label>
+                <label><input type="checkbox" value="taekwondo"> Taekwondo</label>
+            </div>
+
+            <label for="frequencia" class="label-frequencia">Quantas vezes por semana você treina?</label>
+            <select id="frequencia" name="frequencia" class="select-frequencia">
+                <option value="">Selecione</option>
+                <option value="1">1x por semana</option>
+                <option value="2">2x por semana</option>
+                <option value="3">3x por semana</option>
+                <option value="4">4x por semana</option>
+                <option value="5">5x por semana</option>
+                <option value="6">6x por semana</option>
+                <option value="7">Todos os dias</option>
+            </select>
+        </div>
+
+        <label for="objetivo">Objetivo:</label>
+        <select id="objetivo" name="objetivo" required>
+            <option value="">Selecione</option>
+            <option value="emagrecer">Emagrecer</option>
+            <option value="manter">Manter peso</option>
+            <option value="ganhar">Ganhar massa muscular</option>
+        </select>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+</main>
+
+<script src="cal.js"></script>
+<script>
+// MENU HAMBÚRGUER
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+});
+</script>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Coluna 1: Logo e Descrição -->
+        <div class="footer-col">
+            <h2 class="footer-logo">KRONOS</h2>
+            <p>
+                Plataforma simples e funcional para cálculo de calorias, dietas e treinos.
+            </p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="Academia.html">Academias</a></li>
+                <li><a href="calorias.html">Medir Kal</a></li>
+                <li><a href="listaDeTreino.html">Montar Treino</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-col">
+            <h3>Contato</h3>
+            <p>
+                📧 contato@kronosacademia.com <br>
+                📞 (00) 0000-0000 <br>
+                📍 Rua Exemplo, 123 – Cidade/UF
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 KRONOS Academia — Todos os direitos reservados.
+    </div>
+</footer>
+</html>

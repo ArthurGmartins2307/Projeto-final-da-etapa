@@ -1,0 +1,554 @@
+/* ===========================
+   RESET & CONFIGURAÇÕES GERAIS
+   =========================== */
+
+:root {
+    --color-primary: #ef4444; /* Vermelho/Laranja Sutil para destaque */
+    --color-secondary: #f97316; /* Laranja secundário */
+    --color-background: #1c1c1c; /* Fundo escuro principal */
+    --color-background-light: #2c2c2c; /* Fundo de seção/card mais claro */
+    --color-text-light: #f3f4f6; /* Texto claro */
+    --color-text-dark: #a0a0a0; /* Texto secundário */
+    --color-white: #ffffff;
+    --color-gray-border: #404040; /* Borda */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cinzel", serif;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, .btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-block;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+
+
+/* ===========================
+   HEADER
+   =========================== */
+
+.header {
+    background-color: var(--color-background-light);
+    padding: 2px ;
+    position: sticky;
+    top: 0;
+    
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Bem menor */
+    height: 55px; /* Controle total da altura do header */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px; /* espaço entre a logo e o texto */
+}
+
+.logo-img {
+    width: auto;
+    height: 32px; /* tamanho ideal */
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-primary);
+
+}
+
+
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+    padding: 8px 0;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* MENU HAMBÚRGUER */
+.menu-toggle {
+    display: none;
+    background: none;
+    color: var(--color-white);
+    font-size: 30px;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* MENU HAMBÚRGUER */
+.menu-toggle {
+    display: none;
+    background: none;
+    color: var(--color-white);
+    font-size: 30px;
+    padding: 0;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Hamburger Menu - TAMBÉM MENOR */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 22px; /* MENOR */
+    height: 16px; /* MENOR */
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 1.5px; /* MAIS FINO */
+    width: 100%;
+    background-color: var(--color-text-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   CONTEÚDO PRINCIPAL
+   =========================== */
+
+.container {
+    padding: 25px 20px; /* Menor padding no topo */
+}
+
+h2.gradient-text {
+    font-size: 28px; /* Um pouco menor */
+    font-weight: 800;
+    margin: 25px 0 15px;
+    color: var(--color-text-light);
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+h2.gradient-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 45px;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+}
+
+/* Campo de busca - TAMBÉM MAIS COMPACTO */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin: 18px 0; /* Menor margem */
+    max-width: 500px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px 14px; /* Mais compacto */
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-border);
+    border-radius: 6px;
+    color: var(--color-text-light);
+    font-size: 13px; /* Menor */
+    transition: all 0.3s ease;
+    height: 40px; /* Altura fixa menor */
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+.search-container button {
+    padding: 10px 22px; /* Mais compacto */
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px; /* Menor */
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    height: 40px; /* Altura fixa igual ao input */
+}
+
+.search-container button:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Listas de resultados */
+.lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 15px;
+}
+
+/* Cards de treino */
+.card {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    padding: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px; /* Menor */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 16px; /* Menor */
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 12px; /* Menor */
+    color: var(--color-text-dark);
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.card p:last-of-type {
+    margin-bottom: 10px;
+}
+
+/* Container de botões do card */
+.card-buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.btn-card {
+    padding: 7px 12px; /* Mais compacto */
+    border-radius: 4px;
+    font-size: 12px; /* Menor */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 80px; /* Menor */
+}
+
+.btn-card:nth-child(1) {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+.btn-card:nth-child(2) {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.btn-card:nth-child(3) {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-card:nth-child(1):hover {
+    background-color: #ea580c;
+}
+
+.btn-card:nth-child(2):hover {
+    background-color: #dc2626;
+}
+
+.btn-card:nth-child(3):hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+@media (max-width: 768px) {
+    /* Header Responsivo */
+    .hamburger {
+        display: flex;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 220px; /* Menor */
+        height: 100vh;
+        background-color: var(--color-background-light);
+        flex-direction: column;
+        padding: 60px 20px 20px; /* Menor */
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        gap: 0;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav a {
+        padding: 10px 0; /* Menor */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px; /* Menor */
+        text-transform: none; /* Remove uppercase no mobile */
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -4px);
+    }
+    
+    /* Conteúdo Responsivo */
+    .header-flex {
+        padding: 0 15px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        margin: 12px 0; /* Menor */
+    }
+    
+    .search-container input,
+    .search-container button {
+        width: 100%;
+        height: 38px; /* Menor no mobile */
+    }
+    
+    .lista {
+        grid-template-columns: 1fr;
+        gap: 12px; /* Menor gap */
+    }
+    
+    h2.gradient-text {
+        font-size: 22px; /* Menor */
+        text-align: center;
+        margin: 20px 0 10px;
+    }
+    
+    h2.gradient-text::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 35px;
+    }
+    
+    .card-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .btn-card {
+        width: 100%;
+        padding: 8px; /* Ajustado */
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+    
+    .container {
+        padding: 15px 15px 40px; /* Menor padding */
+    }
+    
+    .card {
+        padding: 14px; /* Mais compacto */
+    }
+    
+    .card img {
+        height: 130px; /* Menor */
+    }
+    
+    h2.gradient-text {
+        font-size: 20px;
+        margin: 15px 0 8px;
+    }
+    
+    .search-container {
+        margin: 8px 0;
+    }
+    
+    .search-container input,
+    .search-container button {
+        height: 36px; /* Mais compacto */
+        font-size: 12px;
+    }
+    
+    .search-container input {
+        padding: 8px 12px;
+    }
+    
+    .search-container button {
+        padding: 8px 16px;
+    }
+}
+
+/* ===========================
+   FOOTER - Estilo Completo
+   =========================== */
+
+.footer {
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
+    padding: 60px 0;
+    font-family: inherit;
+    border-top: 1px solid var(--color-gray-border);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.footer-col h3 {
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.footer-col p {
+    line-height: 1.7;
+    font-size: 15px;
+    color: var(--color-text-dark);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.9;
+}
+
+.footer-col ul li a {
+    color: var(--color-text-dark);
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-gray-border);
+    font-size: 14px;
+    color: var(--color-text-dark);
+}

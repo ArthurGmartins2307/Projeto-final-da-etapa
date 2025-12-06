@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia - SportLife Hub</title>
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="acdemia.css">
+</head>
+
+<body>
+<header class="header">
+     <div class="container header-flex">
+        <div class="logo">
+           <img src="./img/logo.png" alt="logo" class="logo-img">
+           <span class="logo-text">KRONOS</span>
+        </div>
+
+
+        <nav id="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <a href="index.html">Início</a>
+            <a href="calorias.html">Medir Kal</a>
+            <a href="listaDeTreino.html">Montar Treino</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="title-group">
+        <h1>Buscador de Academias</h1>
+        <p class="lead">Pesquise academias por cidade e modalidade</p>
+    </div>
+
+    <div class="card">
+        <div class="grid">
+
+            <div class="col-4">
+                <label for="cidadeInput">Cidade</label>
+                <input type="text" id="cidadeInput" placeholder="Digite a cidade">
+            </div>
+
+            <div class="col-4">
+                <label for="modalidadeSelect">Modalidade</label>
+                <select id="modalidadeSelect">
+                    <option value="">Todas</option>
+                    <option value="academia">Academia</option>
+                    <option value="atletismo">Atletismo</option>
+                    <option value="boxe">Boxe</option>
+                    <option value="caminhada">Caminhada</option>
+                    <option value="capoeira">Capoeira</option>
+                    <option value="ciclismo">Ciclismo</option>
+                    <option value="corrida">Corrida</option>
+                    <option value="crossfit">Crossfit</option>
+                    <option value="jiu jitsu">Jiu Jitsu</option>
+                    <option value="judo">Judô</option>
+                    <option value="karate">Karatê</option>
+                    <option value="kickboxing">Kickboxing</option>
+                    <option value="krav maga">Krav Maga</option>
+                    <option value="muay thai">Muay Thai</option>
+                    <option value="natacao">Natação</option>
+                    <option value="taekwondo">Taekwondo</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <button id="buscarGPS" class="btn btn-primary">Buscar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="resultados" id="lista-campeonatos"></div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+<script src="menu.js"></script>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Coluna 1: Logo e Descrição -->
+        <div class="footer-col">
+            <h2 class="footer-logo">KRONOS</h2>
+            <p>
+                Plataforma simples e funcional para cálculo de calorias, dietas e treinos.
+            </p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="Academia.html">Academias</a></li>
+                <li><a href="calorias.html">Medir Kal</a></li>
+                <li><a href="listaDeTreino.html">Montar Treino</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-col">
+            <h3>Contato</h3>
+            <p>
+                📧 contato@kronosacademia.com <br>
+                📞 (00) 0000-0000 <br>
+                📍 Rua Exemplo, 123 – Cidade/UF
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 KRONOS Academia — Todos os direitos reservados.
+    </div>
+</footer>
+</html>

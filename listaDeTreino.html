@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Treinos</title>
+    <link rel="stylesheet" href="listaDeTreino.css">
+</head>
+<body>
+
+
+<header class="header">
+     <div class="container header-flex">
+        <div class="logo">
+           <img src="./img/logo.png" alt="logo" class="logo-img">
+           <span class="logo-text">KRONOS</span>
+        </div>
+
+
+        <nav id="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <a href="index.html">Início</a>
+            <a href="Academia.html">Academias</a>
+            <a href="calorias.html">Medir Kal</a>
+           
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Campo de busca -->
+    <div class="search-container">
+        <input type="text" id="treino" placeholder="Digite o exercício...">
+        <button id="procurarTreino">Procurar</button>
+    </div>
+
+    <!-- Resultados da busca -->
+    <h2 class="gradient-text">Exercícios</h2>
+    <div id="procurados" class="lista"></div>
+
+    <!-- Treinos adicionados -->
+    <h2 class="gradient-text">Seu treino</h2>
+    <div id="treino2" class="lista"></div>
+
+</div>
+
+<!-- Template de card -->
+<template id="card-template">
+    <div class="card">
+        <img class="card-img" src="" alt="Exercício">
+        <h3 class="card-nome"></h3>
+        <p class="card-desc"></p>
+        <p class="card-series"></p>
+        <p class="card-obs"></p>
+        <div class="card-buttons">
+            <button class="btn-card btn-video">Vídeo</button>
+            <button class="btn-card btn-adicionar">Adicionar</button>
+            <button class="btn-card btn-remover">Remover</button>
+        </div>
+    </div>
+</template>
+
+<script src="listaDeTreino.js"></script>
+</body>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Coluna 1: Logo e Descrição -->
+        <div class="footer-col">
+            <h2 class="footer-logo">KRONOS</h2>
+            <p>
+                Plataforma simples e funcional para cálculo de calorias, dietas e treinos.
+            </p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+            <h3>Navegação</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="Academia.html">Academias</a></li>
+                <li><a href="calorias.html">Medir Kal</a></li>
+                <li><a href="listaDeTreino.html">Montar Treino</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-col">
+            <h3>Contato</h3>
+            <p>
+                📧 contato@kronosacademia.com <br>
+                📞 (00) 0000-0000 <br>
+                📍 Rua Exemplo, 123 – Cidade/UF
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 KRONOS Academia — Todos os direitos reservados.
+    </div>
+</footer>
+</html>
